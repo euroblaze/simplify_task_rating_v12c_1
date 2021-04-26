@@ -5,7 +5,8 @@
         <menuitem name="Rating Questions"
                   id="simplify_task_rating_v12c_1.rating_questions"
                   action="task_rating_action"
-                  parent="project.menu_project_config"/>
+                  parent="project.menu_project_config"
+                  groups="base.group_no_one"/>
 
     </data>
 </odoo>
