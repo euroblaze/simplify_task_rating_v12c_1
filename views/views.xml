@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem name="Rating Questions"
+                  id="simplify_task_rating_v12c_1.rating_questions"
+                  action="task_rating_action"
+                  parent="project.menu_project_config"/>
+
+    </data>
+</odoo>
