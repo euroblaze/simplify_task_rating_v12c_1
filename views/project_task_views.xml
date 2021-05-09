@@ -2,23 +2,6 @@
 <odoo>
     <data>
 
-        <!-- Rate task button -->
-        <record model="ir.ui.view" id="task_rating_form_view_button">
-            <field name="name">project.task.extended.form</field>
-            <field name="model">project.task</field>
-            <field name="inherit_id" ref="project.view_task_form2"/>
-            <field name="type">form</field>
-            <field name="arch" type="xml">
-                <header>
-                    <button name="rating_questions_form"
-                            type="object"
-                            string="Rate Questions"
-                            groups="base.group_no_one"
-                            class="oe_highlight"/>
-                </header>
-            </field>
-        </record>
-
         <!-- Task rating in task's form view -->
         <record model="ir.ui.view" id="task_rating_form_view_rating">
             <field name="name">project.task.extended.form2</field>
@@ -26,19 +9,30 @@
             <field name="inherit_id" ref="project.view_task_form2"/>
             <field name="type">form</field>
             <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="rating_questions_form"
+                            type="object"
+                            string="Rate Questions"
+                            groups="project.group_project_manager"
+                            class="oe_highlight"/>
+                    <button class="btn btn-primary"
+                            name="rating_questions_mail"
+                            string="Rating to Customer"
+                            type="object"/>
+                </xpath>
                 <xpath expr="//page[@name='extra_info']" position="after">
                     <page name="task_rating" string="Task Rating">
                         <form string="Task Rating" options="{'always_reload': true}">
                             <group>
-                                <field name="rating_questions">
-                                    <tree create="false" delete="false">
+                                <field name="task_question_rating" readonly="1">
+                                    <tree>
                                         <field name="question"/>
                                         <field name="rating" widget="priority"/>
                                     </tree>
                                 </field>
                             </group>
                             <group>
-                                <field name="additional_notes"/>
+                                <field name="additional_notes" readonly="1"/>
                             </group>
                         </form>
                     </page>
@@ -53,11 +47,7 @@
                             <group>
                                 <field name="test_site"/>
                             </group>
-                            <group>
-                                <field name="functionality_specification" widget="many2many_binary"/>
-                            </group>
                         </form>
-
                     </page>
                 </xpath>
             </field>

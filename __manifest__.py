@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "simplify_task_rating_v12c_1",
+    'name': "Project Task Rating",
 
     'summary': """
-        Give a rating to a task.
+        Rate a Task
     """,
 
     'description': """
@@ -14,21 +14,21 @@
             - Was the deployment process of the feature smooth and efficient?
     """,
 
-    'author': "Simplify ERP",
+    'author': "Simplify ERP®",
     'website': "https://simplify-erp.com/",
-    'category': 'Uncategorized',
+    'category': 'Project Task',
     'version': '1.0',
     'depends': ['base', 'project'],
     'data': [
         'security/ir.model.access.csv',
         'data/data.xml',
-        'views/rating_question_views.xml',
-        'views/task_rating_views.xml',
+        'data/project_task_rate_template.xml',
+        'views/project_task_question_views.xml',
         'views/project_task_views.xml',
+        'views/portal_project_task_views.xml',
+        'views/project_task_rate_views.xml',
         'views/views.xml',
-    ],
-    'demo': [
-        'demo/demo.xml',
+        'views/assets.xml',
     ],
     'installable': True,
     'auto_install': False,

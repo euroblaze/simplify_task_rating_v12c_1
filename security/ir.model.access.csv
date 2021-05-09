@@ -1,2 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-project.task.access_project_task_rating,access.project.task_rating,model_project_task_rating,,1,1,1,1
+access_project_task_question_admin,project.task_question_admin,model_project_task_question,base.group_system,1,1,1,1
+access_project_task_question_manager,project.task_question_manager,model_project_task_question,project.group_project_manager,1,0,0,0
+access_project_task_question_project_user,project.task_question_project_user,model_project_task_question,project.group_project_user,1,0,0,0
+access_project_task_question_user,project.task_question_user,model_project_task_question,base.group_user,1,0,0,0
+access_project_task_question_portal,project.task_question_portal,model_project_task_question,base.group_portal,1,0,0,0
+access_project_task_rate_admin,project.task_rate_admin,model_project_task_rate,base.group_system,1,1,1,1
+access_project_task_rate_manager,project.task_rate_manager,model_project_task_rate,project.group_project_manager,1,1,1,1

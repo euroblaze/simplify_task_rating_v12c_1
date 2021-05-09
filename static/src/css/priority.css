@@ -1,0 +1,35 @@
+.row-equal {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rating-questions-block {
+    outline: 0 !important;
+}
+
+.additional-notes-area {
+    overflow: auto;
+}
+
+.task-rating {
+    outline: 0;
+    font-size: 1.35em;
+    cursor: pointer;
+}
+
+.task-rating:hover {
+    text-decoration: none;
+}
+
+.task-rating.fa-star-o {
+    color: #a8a8a8;
+}
+
+.task-rating.fa-star {
+    color: gold;
+}
+
+.textarea-resize {
+    resize: none;
+}

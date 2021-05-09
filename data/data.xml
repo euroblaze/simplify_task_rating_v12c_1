@@ -1,22 +1,22 @@
 <odoo>
     <data noupdate="1">
 
-        <record id="project_task_rating_1" model="project.task_rating">
+        <record model="project.task_question">
             <field name="question">How did you like the communication with your developer on this task?</field>
             <field name="default_question">True</field>
         </record>
 
-        <record id="project_task_rating_2" model="project.task_rating">
+        <record model="project.task_question">
             <field name="question">How would you assess the quality of the software written for this task?</field>
             <field name="default_question">True</field>
         </record>
 
-        <record id="project_task_rating_3" model="project.task_rating">
+        <record model="project.task_question">
             <field name="question">Was the task delivered in satisfactory time according to your business needs?</field>
             <field name="default_question">True</field>
         </record>
 
-        <record id="project_task_rating_4" model="project.task_rating">
+        <record model="project.task_question">
             <field name="question">Was the deployment process of the feature smooth and efficient?</field>
             <field name="default_question">True</field>
         </record>

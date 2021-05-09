@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Project Task Rating Form View -->
+        <record id="project_task_rate_form" model="ir.ui.view">
+            <field name="name">project.task_rate.form</field>
+            <field name="model">project.task_rate</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="question"/>
+                        </group>
+                        <group>
+                            <field name="rating"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Project Task Rating Action -->
+        <record model="ir.actions.act_window" id="project_task_rate_action">
+            <field name="name">Task Rating</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">project.task_rate</field>
+            <field name="view_mode">form</field>
+        </record>
+
+    </data>
+</odoo>

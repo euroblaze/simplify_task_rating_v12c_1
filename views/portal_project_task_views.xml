@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Portal Project Task View -->
+        <template id="portal_my_task_rq"
+                  inherit_id="project.portal_my_task">
+            <xpath expr="//div[@t-if='task.user_id or task.partner_id']" position="after">
+                <div t-if="task.rating_questions">
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <div class="o_portal_docs list-group">
+                                <button class="list-group-item list-group-item-action d-flex align-items-center justify-content-between rating-questions-block"
+                                        title="Rating Questions">
+                                    Rating Questions
+                                    <span class="badge badge-secondary badge-pill"/>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <form method="POST" t-attf-action="/my/task/#{task.id}/rate" class="d-none rate-form">
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <hr class="mb-1"/>
+                            </div>
+                        </div>
+                        <div t-if="success_message" class="row">
+                            <div class="col-lg-12 col-12">
+                                <div class="alert alert-success">
+                                    <t t-esc="success_message"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div t-if="error_message" class="row">
+                            <div class="col-lg-12 col-12">
+                                <div class="alert alert-danger">
+                                    <t t-esc="error_message"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-equal">
+                            <div class="col-lg-6 col-12">
+                                <div class="row question-block">
+                                    <div class="col-lg-12 col-12 py-1">
+                                        <strong>Questions</strong>
+                                    </div>
+                                    <t t-foreach="task.task_question_rating" t-as="rating_question">
+
+                                        <div class="col-lg-12 col-12 rate-question" t-field="rating_question.question"/>
+                                        <div class="col-lg-12 col-12">
+                                            <div role="radiogroup"
+                                                 class="o_priority o_field_widget priority_custom_widget"
+                                                 aria-label="Rating">
+                                                <input t-att-value="rating_question.rating"
+                                                       class="d-none"/>
+                                                <a role="radio" aria-checked="false" title="Very Dissatisfied"
+                                                   aria-label="Very Dissatisfied" tabindex="-1" data-index="1"
+                                                   class="o_priority_star fa fa-star-o task-rating"/>
+                                                <a role="radio" aria-checked="false" title="Dissatisfied"
+                                                   aria-label="Dissatisfied" tabindex="-1" data-index="2"
+                                                   class="o_priority_star fa fa-star-o task-rating"/>
+                                                <a role="radio" aria-checked="false" title="Fair"
+                                                   aria-label="Fair" tabindex="-1" data-index="3"
+                                                   class="o_priority_star fa fa-star-o task-rating"/>
+                                                <a role="radio" aria-checked="false" title="Satisfied"
+                                                   aria-label="Satisfied" tabindex="-1" data-index="4"
+                                                   class="o_priority_star fa fa-star-o task-rating"/>
+                                                <a role="radio" aria-checked="false" title="Very Satisfied"
+                                                   aria-label="Very Satisfied" tabindex="-1" data-index="5"
+                                                   class="o_priority_star fa fa-star-o task-rating"/>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12">
+                                <div class="row rating-block">
+                                    <div class="col-lg-12 col-12">
+                                        <strong>Additional Notes</strong>
+                                    </div>
+                                    <div class="col-lg-12 col-12 mt-2">
+                                        <div class="py-2 px-2 bg-100 small additional-notes-area"
+                                             t-field="task.additional_notes"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <textarea rows="5" name="additional_notes"
+                                          placeholder="Your additional notes..."
+                                          class="form-control textarea-resize my-3"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <button type="submit"
+                                        class="btn btn-primary pull-left">Rate Task
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

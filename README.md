@@ -4,7 +4,7 @@ About simplify_task_rating_v12c_1
 
 - Default Rating questions are added once a task is created.
 - User who has access to the debug mode can add/edit/delete the rating questions for a specific task with a click of the button Rating Questions available in the header of the Task Form View.
-- Customer can give a rating from 0 to 5 for every single ratings question.
+- Customer can give a rating from 0 to 5 for every single rating question.
 - Average Rating is shown on the Kanban View.
 - In Project --> Configuration a menu item (Rating Questions) is available for adding, editing and deleting rating questions.
 - Task Links page exists on every single task. Fields such as GitLab/GitHub, SonarQube, Testing Site and Functionality Speicifications are available.

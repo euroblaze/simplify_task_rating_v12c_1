@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="rate_questions_email_template" model="mail.template">
+            <field name="name">Rating: Send to Customer</field>
+            <field name="model_id" ref="project.model_project_task"/>
+            <field name="email_from">${object.user_id.email_formatted |safe}</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="subject">Rating - ${object.name}</field>
+            <field name="body_html" type="html">
+                <div class="m-0 p-0">
+                    <div class="m-0 p-0" style="font-size: 13px;">
+                        <p class="pb-2">Dear ${object.partner_id.name},</p>
+                        <p class="pb-2">I would like to inform you that the task
+                            <b>${object.name}</b>
+                            has been finished.
+                        </p>
+                        <p class="pb-1">If you would like to take the time to rate me on this task with the following
+                            questions.
+                        </p>
+                        <div class="pt-2 pb-4">
+                            <p class="font-weight-bold">Questions:</p>
+                            % for rating_question in object.rating_questions:
+                            <div>${rating_question.question}</div>
+                            % endfor
+                        </div>
+                        <p>If you have any questions or maybe even suggestions for new rating questions feel free to contact
+                            us.
+                        </p>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

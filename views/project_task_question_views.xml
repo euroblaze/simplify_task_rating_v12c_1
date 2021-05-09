@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Task rating questions action -->
+        <record id="rating_questions_form" model="ir.ui.view">
+            <field name="name">project.task.popup</field>
+            <field name="model">project.task</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="rating_questions" options="{'always_reload': true}">
+                                <tree>
+                                    <field name="question"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="write" string="Submit" type="object" class="btn-primary"/>
+                        <button string="Cancel" type="object" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Rating Questions Form View -->
+        <record id="project_task_question_form" model="ir.ui.view">
+            <field name="name">project.task_question.form</field>
+            <field name="model">project.task_question</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="question"/>
+                        </group>
+                        <group>
+                            <field name="default_question"/>
+                        </group>
+                        <group>
+                            <field name="task_questions">
+                                <tree>
+                                    <field name="project_id"/>
+                                    <field name="name" string="Task"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Rating Questions List View -->
+        <record id="project_task_question_tree" model="ir.ui.view">
+            <field name="name">project.task_question.tree</field>
+            <field name="model">project.task_question</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="question"/>
+                    <field name="default_question"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Rating Questions Action -->
+        <record model="ir.actions.act_window" id="task_question_action">
+            <field name="name">Rating Questions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">project.task_question</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Rating Questions</p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
