@@ -13,12 +13,13 @@
                     <button name="rating_questions_form"
                             type="object"
                             string="Rate Questions"
-                            groups="project.group_project_manager"
+                            groups="base.group_system"
                             class="oe_highlight"/>
-                    <button class="btn btn-primary"
-                            name="rating_questions_mail"
+                    <button name="rating_questions_mail"
+                            type="object"
                             string="Rating to Customer"
-                            type="object"/>
+                            groups="base.group_system"
+                            class="btn btn-primary"/>
                 </xpath>
                 <xpath expr="//page[@name='extra_info']" position="after">
                     <page name="task_rating" string="Task Rating">

@@ -146,7 +146,7 @@ class ProjectTask(models.Model):
     def rating_questions_form(self):
         for record in self:
 
-            if record.env.user.has_group('project.group_project_manager'):
+            if record.env.user.has_group('base.group_system'):
 
                 view_id = record.env \
                     .ref('simplify_task_rating_v12c_1'
@@ -177,7 +177,8 @@ class ProjectTask(models.Model):
         for record in self:
             if record.rating_questions \
                     and record.partner_id \
-                    and record.user_id:
+                    and record.user_id \
+                    and record.env.user.has_group('base.group_system'):
                 record.ensure_one()
                 ir_model_data = record.env['ir.model.data']
                 try:
