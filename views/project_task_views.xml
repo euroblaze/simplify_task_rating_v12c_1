@@ -9,21 +9,21 @@
             <field name="inherit_id" ref="project.view_task_form2"/>
             <field name="type">form</field>
             <field name="arch" type="xml">
-                <xpath expr="//header" position="inside">
-                    <button name="rating_questions_form"
-                            type="object"
-                            string="Rate Questions"
-                            groups="base.group_system"
-                            class="oe_highlight"/>
-                    <button name="rating_questions_mail"
-                            type="object"
-                            string="Rating to Customer"
-                            groups="base.group_system"
-                            class="btn btn-primary"/>
-                </xpath>
                 <xpath expr="//page[@name='extra_info']" position="after">
                     <page name="task_rating" string="Task Rating">
                         <form string="Task Rating" options="{'always_reload': true}">
+                            <header class="p-0 border-0">
+                                <button string="Rating Questions"
+                                        name="rating_questions_form"
+                                        type="object"
+                                        groups="base.group_system"
+                                        class="oe_highlight"/>
+                                <button string="Rating Notification"
+                                        name="rating_questions_mail"
+                                        type="object"
+                                        groups="base.group_system"
+                                        class="oe_highlight"/>
+                            </header>
                             <group>
                                 <field name="task_question_rating" readonly="1">
                                     <tree>

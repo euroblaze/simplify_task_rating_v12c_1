@@ -15,16 +15,17 @@
                             <b>${object.name}</b>
                             has been finished.
                         </p>
-                        <p class="pb-1">If you would like to take the time to rate me on this task with the following
-                            questions.
+                        <p class="pb-1">If you would like to take the time to rate me on this task with the questions in
+                            the
+                            link bellow.
                         </p>
-                        <div class="pt-2 pb-4">
-                            <p class="font-weight-bold">Questions:</p>
-                            % for rating_question in object.rating_questions:
-                            <div>${rating_question.question}</div>
-                            % endfor
+                        <div class="my-2">
+                            <a href="my/task/${object.id}" class="template-button">
+                                Rate Task
+                            </a>
                         </div>
-                        <p>If you have any questions or maybe even suggestions for new rating questions feel free to contact
+                        <p>If you have any questions or maybe even suggestions for new rating questions feel free to
+                            contact
                             us.
                         </p>
                     </div>
