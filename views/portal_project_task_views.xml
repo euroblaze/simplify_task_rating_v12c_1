@@ -18,7 +18,7 @@
                             </div>
                         </div>
                     </div>
-                    <form method="POST" t-attf-action="/my/task/#{task.id}/rate" class="d-none rate-form">
+                    <form method="POST" t-attf-action="/my/task/#{task.id}/rate" class="d-block rate-form">
                         <div class="row">
                             <div class="col-lg-12 col-12">
                                 <hr class="mb-1"/>

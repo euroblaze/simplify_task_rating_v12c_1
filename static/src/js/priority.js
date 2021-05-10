@@ -21,15 +21,11 @@ $(document).ready(function () {
     function showRateForm() {
         $(".rating-questions-block").click(function () {
             $(".rate-form").toggleClass("d-none d-block");
-            resizeTextArea();
         });
     }
 
-    function showRateFormAlert() {
-        if ($(".rate-form .alert-danger").length || $(".rate-form .alert-success").length) {
-            $(".rate-form").toggleClass("d-none d-block");
-            resizeTextArea();
-        }
+    function showRateFormLoad() {
+        resizeTextArea();
     }
 
     function showNumberOfQuestions() {
@@ -136,7 +132,7 @@ $(document).ready(function () {
     }
 
     populateHoverRates();
-    showRateFormAlert();
+    showRateFormLoad();
     showRateForm();
     showNumberOfQuestions();
     populateRates();

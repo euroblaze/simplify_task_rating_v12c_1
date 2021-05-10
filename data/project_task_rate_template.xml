@@ -20,11 +20,11 @@
                             link bellow.
                         </p>
                         <div class="my-2">
-                            <a href="my/task/${object.id}" class="template-button">
+                            <a href="${object.access_url}" class="template-button">
                                 Rate Task
                             </a>
                         </div>
-                        <p>If you have any questions or maybe even suggestions for new rating questions feel free to
+                        <p>In case you have any questions or maybe even suggestions for new rating questions feel free to
                             contact
                             us.
                         </p>

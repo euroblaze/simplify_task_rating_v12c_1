@@ -82,6 +82,9 @@ class ProjectTask(models.Model):
         for rating in copy.task_question_rating:
             if copy.id != rating.task_id:
                 copy.write({"task_question_rating": [(3, rating.id)]})
+            else:
+                copy.write({"task_question_rating": [(1, rating.id,
+                                                      {"rating": "0"})]})
 
         return copy
 
@@ -171,8 +174,8 @@ class ProjectTask(models.Model):
 
             else:
                 raise AccessError(
-                    "Only users with a "
-                    "system admin role can "
+                    "Only users with "
+                    "system admin rights can "
                     "access this view."
                 )
 

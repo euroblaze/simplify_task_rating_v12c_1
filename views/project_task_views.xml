@@ -10,7 +10,7 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='extra_info']" position="after">
-                    <page name="task_rating" string="Task Rating">
+                    <page name="task_rating" string="Task Rating" groups="base.group_no_one">
                         <form string="Task Rating" options="{'always_reload': true}">
                             <header class="p-0 border-0">
                                 <button string="Rating Questions"
@@ -40,13 +40,13 @@
                     <page name="task_links" string="Task Links">
                         <form string="Task Links">
                             <group>
-                                <field name="git_link"/>
+                                <field name="git_link" widget="url"/>
                             </group>
                             <group>
-                                <field name="sonarqube_link"/>
+                                <field name="sonarqube_link" widget="url"/>
                             </group>
                             <group>
-                                <field name="test_site"/>
+                                <field name="test_site" widget="url"/>
                             </group>
                         </form>
                     </page>
