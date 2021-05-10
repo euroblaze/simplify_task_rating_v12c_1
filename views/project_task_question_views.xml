@@ -18,7 +18,7 @@
                         </group>
                     </sheet>
                     <footer>
-                        <button name="write" string="Submit" type="object" class="btn-primary"/>
+                        <button name="write_rates" string="Submit" type="object" class="btn-primary"/>
                         <button string="Cancel" type="object" class="btn-secondary" special="cancel"/>
                     </footer>
                 </form>

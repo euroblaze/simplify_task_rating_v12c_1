@@ -91,6 +91,9 @@ class ProjectTask(models.Model):
             record.write({'task_question_rating': remove_rating})
             return super(ProjectTask, self).unlink()
 
+    def write_rates(self):
+        self.write({})
+
     @api.constrains("rating_questions")
     def check_rating(self):
         for record in self:
