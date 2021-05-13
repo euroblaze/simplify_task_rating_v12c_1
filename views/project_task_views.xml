@@ -10,18 +10,16 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='extra_info']" position="after">
-                    <page name="task_rating" string="Task Rating" groups="base.group_no_one">
+                    <page name="task_rating" string="Task Rating">
                         <form string="Task Rating" options="{'always_reload': true}">
                             <header class="p-0 border-0">
                                 <button string="Rating Questions"
                                         name="rating_questions_form"
                                         type="object"
-                                        groups="base.group_system"
                                         class="oe_highlight"/>
                                 <button string="Rating Notification"
                                         name="rating_questions_mail"
                                         type="object"
-                                        groups="base.group_system"
                                         class="oe_highlight"/>
                             </header>
                             <group>

@@ -152,7 +152,7 @@ class ProjectTask(models.Model):
     def rating_questions_form(self):
         for record in self:
 
-            if record.env.user.has_group('base.group_system'):
+            if record.env.user.has_group('project.group_project_manager'):
 
                 view_id = record.env \
                     .ref('simplify_task_rating_v12c_1'
@@ -175,16 +175,15 @@ class ProjectTask(models.Model):
             else:
                 raise AccessError(
                     "Only users with "
-                    "system admin rights can "
-                    "access this view."
+                    "Project Manager rights "
+                    "can access this view."
                 )
 
     def rating_questions_mail(self):
         for record in self:
             if record.rating_questions \
                     and record.partner_id \
-                    and record.user_id \
-                    and record.env.user.has_group('base.group_system'):
+                    and record.user_id:
                 record.ensure_one()
                 ir_model_data = record.env['ir.model.data']
                 try:
@@ -225,3 +224,9 @@ class ProjectTask(models.Model):
                     "before contacting the "
                     "customer."
                 )
+
+    def customer_rated_mail(self):
+        mail_template = self.env \
+            .ref('simplify_task_rating_v12c_1.'
+                 'rate_confirmation_email_template')
+        mail_template.send_mail(self.id, force_send=True)

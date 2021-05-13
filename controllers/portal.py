@@ -33,8 +33,9 @@ class WebsiteRatingQuestion(CustomerPortal):
                 for rating_question in task_sudo.task_question_rating:
                     rating_question.rating = kw["q_" + str(num_questions + 1)]
                     num_questions += 1
-            if task_sudo.additional_notes != kw["additional_notes"] \
-                    and num_questions == len(task_sudo.task_question_rating):
+
+            if num_questions == len(task_sudo.task_question_rating) \
+                    and task_sudo.additional_notes != kw["additional_notes"]:
                 task_sudo.write({"additional_notes": kw["additional_notes"]})
 
         if num_questions != len(task_sudo.task_question_rating):
@@ -45,6 +46,7 @@ class WebsiteRatingQuestion(CustomerPortal):
             values.update({'success': "Thank you for rating the task.",
                            'success_message': "Thank you for rating "
                                               "the task."})
+            task_sudo.customer_rated_mail()
 
         return request \
             .render("simplify_task_rating_v12c_1.portal_my_task_rq", values)

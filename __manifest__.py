@@ -24,6 +24,7 @@
         'security/ir.model.access.csv',
         'data/data.xml',
         'data/project_task_rate_template.xml',
+        'data/project_task_rate_customer_template.xml',
         'views/project_task_question_views.xml',
         'views/project_task_views.xml',
         'views/portal_project_task_views.xml',

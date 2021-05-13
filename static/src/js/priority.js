@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+    function formResubmission() {
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    }
+
     function deselectRateAtt(rate) {
         $(rate).attr('aria-checked', "false");
     }
@@ -136,6 +142,7 @@ $(document).ready(function () {
     showRateForm();
     showNumberOfQuestions();
     populateRates();
+    formResubmission();
 
 });
 

@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_project_task_question_admin,simplify_task_rating_v12c_1_task_question_admin,model_project_task_question,base.group_system,1,1,1,1
 access_project_task_rate_admin,simplify_task_rating_v12c_1_task_rate_admin,model_project_task_rate,base.group_system,1,1,1,1
+access_project_task_rate_manager,simplify_task_rating_v12c_1_task_rate_manager,model_project_task_rate,project.group_project_manager,1,1,1,1
+access_project_task_rate_user,simplify_task_rating_v12c_1_task_rate_user,model_project_task_rate,base.group_user,1,0,0,0
