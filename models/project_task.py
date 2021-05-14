@@ -152,7 +152,8 @@ class ProjectTask(models.Model):
     def rating_questions_form(self):
         for record in self:
 
-            if record.env.user.has_group('project.group_project_manager'):
+            if record.env.user.has_group('project.group_project_manager') \
+                    or record.env.user.has_group('base.group_system'):
 
                 view_id = record.env \
                     .ref('simplify_task_rating_v12c_1'
